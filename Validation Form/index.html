@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<style>
+    .submit {
+        border: 1px solid white;
+        width: 150px;
+        height: 50px;
+        color: white;
+        background-color: transparent;
+    }
+
+    .submit:hover {
+        background-color: white;
+        color: #f28686;
+        transition: all .5s;
+    }
+
+    input {
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <form id="userdata" class="w-25 container mx-auto text-center" style="background-color:#f28686;" style="height:100vh;">
+        <h1>Validation Form</h1>
+        Name: <input id="Name" type="text" placeholder="Enter Your Name" />
+        <br /><br />
+        Email: <input id="Email" type="text" placeholder="Enter Your email" />
+        <br /><br />
+        <label>Gender :</label>
+        <input name="gender" type="radio"><label>male</label>
+        <input name="gender" type="radio"><label>female</label>
+        <br /><br />
+        password: <input id="password" type="password" placeholder="Enter Your password" required />
+        <br /><br />
+        phone number: <input id="number" type="Number" placeholder="Enter Your number" />
+        <br /><br />
+        <input type="date" placeholder="Enter Your" />
+        <br /><br />
+        <input type="time" placeholder="Enter Your" />
+        <br /><br />
+        <label>hobby :</label>
+        <input type="checkbox">
+        <lable>Singing</label>
+            <input type="checkbox">
+            <lable>Reading</label>
+                <input type="checkbox">
+                <lable>Travelling</label>
+                    <input type="checkbox">
+                    <lable>Cooking</label>
+                        <br /><br />
+                        <label>Currently Living:</label>
+                        <select>
+                            <option>India</option>
+                            <option selected>UK</option>
+                            <option>canada</option>
+                            <option>Nepal</option>
+                        </select>
+                        <br /><br />
+                        <textarea rows="5" cols="30" placeholder="Your Message"></textarea>
+                        <br /><br />
+                        <input type="submit" class="submit m-3">
+
+    </form>
+    <script src="./index.js"></script>
+</body>
+
+</html>
