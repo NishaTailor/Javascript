@@ -1,63 +1,76 @@
-class book {
-  constructor(title, author, price, rentalPrice, copiesAvailable) {
-    this.title = title;
-    this.#author = author;
-    this.#price = price;
-    this.#rentalPrice = rentalPrice;
-    this.#copiesAvailable = copiesAvailable;
-    this.#rentedCopies = 0;
-  }
-
-  return(copy){
-    this.rentalPrice = rentalPrice;
-  }
-  getauthor() {
-    return this.#author;
-  }
-  setauthor(author) {
-    this.#author = author;
-  }
-}
-let Book = new book("red & white", "rajat sinha", 1000, 500, 1500);
-console.log(book.#author);
-
-
 class Book {
-  // Constructor to initialize the book properties
-  constructor(title, author, isbn, publishedYear) {
-    this.title = title;
-    this.author = author;
-    this.isbn = isbn;
-    this.publishedYear = publishedYear;
+  #author;
+  #price;
+  #rentalPrice;
+  #AvilableCopies;
+
+  constructor(title, author, price, rentalPrice, AvilableCopies) {
+      this.title = title;
+      this.#author = author;
+      this.#price = price;
+      this.#rentalPrice = rentalPrice;
+      this.#AvilableCopies = AvilableCopies;
   }
 
-  // Method to get a brief description of the book
-  getDescription() {
-    return `${this.title} by ${this.author}, published in ${this.publishedYear}. ISBN: ${this.isbn}`;
+    // author
+  getAuthor() {return this.#author;}
+
+  setAuthor(author) {this.#author = author;}
+  
+   //price
+  getPrice() {return this.#price;}
+
+  setPrice(price) {this.#price = price;}
+
+  //Rental price
+  getRentalPrice() {return this.#rentalPrice;}
+
+  setRentalPrice(rentalPrice) {this.#rentalPrice = rentalPrice;}
+
+  //Avilable Copies
+  getAvilableCopies() {return this.#AvilableCopies; }
+
+  setAvilableCopies(AvilableCopies) {this.#AvilableCopies = AvilableCopies;}
+
+  //Buy
+  BookforBuy() {
+      if (this.#AvilableCopies > 0) {
+          this.#AvilableCopies--;
+          console.log(`Book purchased. ${this.#AvilableCopies}`);
+      } else {
+          console.log('Copies Not avilable');
+      }
   }
 
-  // Method to check if the book is a classic
-  isClassic() {
-    const currentYear = new Date().getFullYear();
-    return (currentYear - this.publishedYear) >= 50;
+  //Book for rent
+  Bookforrent() {
+      if (this.#AvilableCopies > 0) {
+          this.#AvilableCopies--;
+          console.log(`Book rented. ${this.#AvilableCopies}`);
+      } else {
+          console.log('copies Not Avilable.');
+      }
   }
 
-  // Method to update the book's title
-  updateTitle(newTitle) {
-    this.title = newTitle;
+  // Return book
+  BookforReturn() {
+      this.#AvilableCopies++;
+      console.log(`Book returned. ${this.#AvilableCopies} copies are Avilable.`);
   }
 
-  // Method to update the book's author
-  updateAuthor(newAuthor) {
-    this.author = newAuthor;
+  // Avilable book
+  CheckforAvilability() {
+      console.log(`${this.#AvilableCopies} copies Avilable.`);
   }
 }
 
-// Example usage
-const book1 = new Book('1984', 'George Orwell', '9780451524935', 1949);
-
-console.log(book1.getDescription()); // "1984 by George Orwell, published in 1949. ISBN: 9780451524935"
-console.log(book1.isClassic()); // true
-
-book1.updateTitle('Nineteen Eighty-Four');
-console.log(book1.getDescription()); // "Nineteen Eighty-Four by George Orwell, published in 1949. ISBN: 9780451524935"
+let book = new Book("Life's Amazing Secrets", "Gour Gopal Das", 200, 150, 5);
+console.log(book);
+console.log(book.author);
+book.CheckforAvilability();
+book.BookforBuy();
+book.CheckforAvilability();
+book.Bookforrent();
+book.CheckforAvilability();
+book.BookforReturn();
+book.CheckforAvilability();
