@@ -9,25 +9,21 @@
     height: 100vh;
 }
 /* card */
-body {
-    font-family: Arial, sans-serif;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
-}
-
 .card {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #a3a0a0;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     max-width: 300px;
     padding: 20px;
+}
+.card:hover{
+    background-color:#070504;
+    border: 5px solid white;
+    border-radius: 90%;
+    color: white;
+    transition: all .5s;
 }
 
 .card-img {
