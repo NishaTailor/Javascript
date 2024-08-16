@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-.box{
+
+.box {
     width: 100%;
     height: 100vh;
     background-image: url("./images/india.webp");
@@ -13,14 +14,22 @@
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
 }
-#hrs{
+
+#hrs {
+
+    color: rgb(9, 9, 56);
+
+}
+
+#day {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     color: rgb(9, 9, 56);
-    
+
 }
