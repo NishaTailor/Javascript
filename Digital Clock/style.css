@@ -21,15 +21,22 @@
 
 #hrs {
 
-    color: rgb(9, 9, 56);
+    color: #090938;
 
 }
-
+#hrs:hover{
+    color: rgb(243, 148, 59);
+    transition: all .6s;
+}
 #day {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    color: rgb(9, 9, 56);
+    color: #090938;
 
+}
+#day:hover{
+    color: rgb(51, 209, 85);
+    transition: all .6s;
 }
