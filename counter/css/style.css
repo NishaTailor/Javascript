@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1320px;
+    height: 70vh;
+    background-image: url(../images/bg-keyboard.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.Counter {
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.Counter:hover {
+    background-color: rgb(232, 132, 234);
+    transition: all .5s;
+}
+
+
+.Counter,
+i,
+span {
+    color:grey;
+    max-width: 100px;
+    height: auto;
+}
+
+.Counter,
+i:hover {
+    transition: all 0.5s;
+    color:black;
+    background-color: pink;
+    max-width: 100px;
+    height: auto;
+}
