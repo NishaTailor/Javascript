@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+<div class="post">
+    <img src="./image/ganpati bappa.jpg">
+    <div class="actions">
+        <button id="like-btn">Like (<span id="like-count">0</span>)</button>
+        <button id="comment-btn">Comment</button>
+        <button id="share-btn">Share</button>
+        <button id="follow-btn">Follow</button>
+    </div>
+    <div id="comments-section">
+        <input type="text" id="comment-input" placeholder="Add a comment...">
+        <button id="post-comment-btn">Post</button>
+        <ul id="comments-list"></ul>
+    </div>
+</div>
+
+<script src="./index.js"></script>
+</body>
+</html>
