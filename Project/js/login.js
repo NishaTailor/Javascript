@@ -1,5 +1,5 @@
 import getValue from "../components/helper.js";
-import Navbar from "../components/Navbar.js";
+import Navbar from "../components/navbar.js";
 
 document.getElementById("navbar").innerHTML = Navbar();
 
@@ -16,7 +16,20 @@ const handleData = (e) => {
     (ele) => ele.email == user.email && ele.password == user.password
   );
 
-  console.log(isMatched);
+  if (isMatched.length > 0) {
+    alert("login success")
+     
+    localStorage.setItem("username",isMatched[0].username)
+
+
+    localStorage.setItem("isLogin", true)
+
+
+    window.location.href = "/index.html"
+  }
+  else {
+    alert("login failure")
+  }
 };
 
 document.querySelector("#userData").addEventListener("submit", handleData);
