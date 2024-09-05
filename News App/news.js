@@ -1,5 +1,5 @@
 let news = JSON.parse(localStorage.getItem("news")) || []
-
+debugger
 const handleData = (e) => {
     e.preventDefault();
 
@@ -11,5 +11,5 @@ const handleData = (e) => {
     news.push(data);
     localStorage.setItem("news", JSON.stringify(news));
 };
-
+debugger
 document.getElementById("newsData").addEventListener("submit", handleData);

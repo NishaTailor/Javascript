@@ -1,4 +1,5 @@
 let products = JSON.parse(localStorage.getItem("products")) || [];
+
 const handleDelete = (index) => {
     console.log(index);
 

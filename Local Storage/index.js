@@ -1,26 +1,34 @@
-const nameTag = document.querySelector('.name-tag')
-const nameInput = document.querySelector('.name')
-const ageTag = document.querySelector('.age-tag')
-const ageInput = document.querySelector('.age')
+// const nameTag = document.querySelector('.name-tag')
+// const nameInput = document.querySelector('.name')
+// const ageTag = document.querySelector('.age-tag')
+// const ageInput = document.querySelector('.age')
 
-const myData = JSON.parse(localStorage.getItem('myData')) || {}
+// const myData = JSON.parse(localStorage.getItem('myData')) || {}
 
-if (myData.name) {
-    nameTag.innerText = myData.name
-}
+// if (myData.name) {
+//     nameTag.innerText = myData.name
+// }
 
-if (myData.age) {
-    ageTag.innerText = myData.age
-}
+// if (myData.age) {
+//     ageTag.innerText = myData.age
+// }
 
-nameInput.addEventListener('input', (e) => {
-    myData.name = e.target.value
-    localStorage.setItem('myData', JSON.stringify(myData))
-    nameTag.innerText = e.target.value
-})
+// nameInput.addEventListener('input', (e) => {
+//     myData.name = e.target.value
+//     localStorage.setItem('myData', JSON.stringify(myData))
+//     nameTag.innerText = e.target.value
+// })
 
-ageInput.addEventListener('input', (e) => {
-    myData.age = e.target.value
-    localStorage.setItem('myData', JSON.stringify(myData))
-    ageTag.innerText = e.target.value
-})
+// ageInput.addEventListener('input', (e) => {
+//     myData.age = e.target.value
+//     localStorage.setItem('myData', JSON.stringify(myData))
+//     ageTag.innerText = e.target.value
+// })
+
+// Storing data
+localStorage.setItem('username', 'JohnDoe');
+
+// Retrieving data
+const username = localStorage.getItem('username');
+console.log(username); // Outputs: JohnDoe
+
