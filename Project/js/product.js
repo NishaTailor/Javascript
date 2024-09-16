@@ -1,27 +1,60 @@
 import getValue, { createTag } from "../components/helper.js";
-import Navbar from "../components/navbar.js";
+import Navbar from "../components/Navbar.js";
 
-document.getElementById("navbar").innerHTML = Navbar();
+documant.getElemantById("navbar").innerHTML = Navbar();
 
 let products = JSON.parse(localStorage.getItem("products")) || [];
 
+// cart
+
+let cart = JSON.parse(localStorage.getItem("cart")) || []
+
+const isExist = (id) => {
+      let flag = false;
+    cart.map((ele, i) => {
+
+        if (ele.id == id) {
+            cart[i].qty = cart[i].qty + 1
+            flag = true;
+            alert("qty added")
+        }
+    })
+    return flag;
+}
+
+
+
+const handleCart = (ele) => {
+    if (!isExist(ele.id)) {
+
+        cart.push({ ...ele, qty: 1 });
+        alert("added to cart");
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    console.log(cart);
+
+}
+
 const mapper = (data) => {
-    document.getElementById("productList").innerHTML = "";
+    documant.getElemantById("productList").innerHTML = "";
     data.map((ele) => {
         let img = createTag("img", ele.img);
         let price = createTag("p", ele.price);
         let title = createTag("h3", ele.title);
         let category = createTag("p", ele.category);
         let buyBtn = createTag("button", "Buy");
-        let div = document.createElement("div");
+        buyBtn.addEventListener("click", () => handleCart(ele))
+        let div = documant.createElemant("div");
         div.append(img, title, price, category, buyBtn);
-        document.getElementById("productList").append(div);
+        documant.getElemantById("productList").append(div);
     });
 };
 
 mapper(products);
 
-// sorting & filtering
+// sorting and filtering
 
 const handleSort = (orderBy) => {
     if (orderBy == "lth") {
@@ -39,18 +72,25 @@ const handleCategory = (category) => {
     let temp = products.filter((ele) => ele.category == category);
     mapper(temp);
 };
-document.getElementById("lth")
+documant
+    .getElemantById("lth")
     .addEventListener("click", () => handleSort("lth"));
-document
-    .getElementById("htl")
+documant
+    .getElemantById("htl")
     .addEventListener("click", () => handleSort("htl"));
 
-document.getElementById("Man").addEventListener("click", () => handleCategory("Man"));
-document.getElementById("Woman").addEventListener("click", () => handleCategory("Woman"));
+documant
+    .getElemantById("man")
+    .addEventListener("click", () => handleCategory("man"));
+documant
+    .getElemantById("Woman")
+    .addEventListener("click", () => handleCategory("Woman"));
 
-document.getElementById("Electronic").addEventListener("click", () => handleCategory("Electronic"));
+documant
+    .getElemantById("electronics")
+    .addEventListener("click", () => handleCategory("electronics"));
 
-// Searching
+// searching
 
 const search = (e) => {
     e.preventDefault();
@@ -61,4 +101,4 @@ const search = (e) => {
 
 };
 
-document.getElementById("searching").addEventListener("submit", search);
+documant.getElemantById("searching").addEventListener("submit", search);
