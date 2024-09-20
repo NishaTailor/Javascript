@@ -1,3 +1,14 @@
+/* banner */
+.bannerbg{
+    background-image: url('/images/bannerbg/bg.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+}
 /* category */
 .category-section {
     background-color: #f8f9fa;
@@ -19,7 +30,7 @@
 
 .category-card h6 {
     margin-top: 10px;
-    font-size: 1rem;
+    font-size: 20px;
     color: #333;
 }
 
@@ -33,7 +44,10 @@
 }
 
 .category-card h6:hover {
+    transition: all .5s;
     color: #ff714e;
+    transform: scale(1.1);
+
 }
 
 /* featured-section */
@@ -46,12 +60,12 @@
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     overflow: hidden;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 8px;
 }
 
 .featured-card img {
     transition: transform 0.3s ease;
-    border-radius: 0.5rem;
+    border-radius: 8px;
     width: 400px;
     height: 450px;
 }
@@ -67,12 +81,12 @@
 
 .featured-card .card-title {
     font-weight: bold;
-    font-size: 1.5rem;
-    color: #333;
+    font-size:16px;
+    color: #f8f9fa;
 }
 
 .featured-card .card-text {
-    color: #555;
+    color: #ffffff;
 }
 
 .featured-card .btn-dark {
@@ -82,15 +96,15 @@
 }
 
 .featured-card .btn-dark:hover {
-    background-color: #ff714e;
+    background-color: #333;
 }
 
 .card-body {
-    background-color:#eb6d4e ;
+    background-color:#ff714e ;
 }
 /* footer */
 .footer{
-    background-color: #eb6d4e;
+    background-color: #e1431c;
 }
 .footer-item img{
     height: 24px;
