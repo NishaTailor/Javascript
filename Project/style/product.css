@@ -3,12 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
-#productList{
+
+#productList {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
-
-
 #productList div img {
+    border: 2px solid white;
     width: 200px;
+    height: 200px;
+    row-gap:60px;
+}
+#filters, button{
+    gap: 10px;
+    text-align:center;
+    margin: 25px;
+    padding: 5px;
+}
+button:hover{
+    background-color: #0A6E54;
+    color: white;
+    font-size: 12px;
+    transition: all .5s;
 }

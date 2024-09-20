@@ -1,0 +1,115 @@
+/* category */
+.category-section {
+    background-color: #f8f9fa;
+}
+
+.category-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.category-card img {
+    width: 650px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.category-card h6 {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.category-card:hover {
+    /* transform: scale(1.05); */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-card:hover img {
+    transform: scale(1.1);
+}
+
+.category-card h6:hover {
+    color: #ff714e;
+}
+
+/* featured-section */
+.featured-section {
+    background-color: #f8f9fa;
+    padding: 28px 0;
+}
+
+.featured-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.featured-card img {
+    transition: transform 0.3s ease;
+    border-radius: 0.5rem;
+    width: 400px;
+    height: 450px;
+}
+
+.featured-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.featured-card:hover img {
+    transform: scale(1.1);
+}
+
+.featured-card .card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.featured-card .card-text {
+    color: #555;
+}
+
+.featured-card .btn-dark {
+    background-color: #333;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.featured-card .btn-dark:hover {
+    background-color: #ff714e;
+}
+
+.card-body {
+    background-color:#eb6d4e ;
+}
+/* footer */
+.footer{
+    background-color: #eb6d4e;
+}
+.footer-item img{
+    height: 24px;
+}
+.footer-item {
+    margin-top: 50px;
+    border: 1px solid white;
+    color: wheat;
+    padding: 10px 10px 10px 10px;
+    transition: all .5s;
+}
+.footer-item p{
+    margin-top: 30px;
+}
+.footer-item .item-list{
+    color: #f8f9fa;
+}
+.footer-item .item-list a{
+    margin-left: 20px;
+    column-gap: 20px;
+    color: #f8f9fa;
+}

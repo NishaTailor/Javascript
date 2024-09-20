@@ -18,13 +18,9 @@ const handleData = (e) => {
 
   if (isMatched.length > 0) {
     alert("login success")
-     
-    localStorage.setItem("username",isMatched[0].username)
 
-
+    localStorage.setItem("username", isMatched[0].username)
     localStorage.setItem("isLogin", true)
-
-
     window.location.href = "/index.html"
   }
   else {

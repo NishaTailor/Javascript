@@ -1,61 +1,70 @@
+import { createTag } from "../components/helper.js";
 import Navbar from "../components/navbar.js";
-
 document.getElementById("navbar").innerHTML = Navbar()
 
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || []
 
-const mapper = (data) => {
-    let tbody = document.getElementById("tbody");
-    tbody.innerHTML = "";
-    for (let i = 0; i < data.length; i++) {
-        let tr = document.createElement("tr");
-        let td1 = document.createElement("td");
-        let img = document.createElement("img");
-        img.src = data[i].img;
-        td1.append(img);
-        let td2 = document.createElement("td");
-        td2.innerHTML = data[i].title;
-        let td3 = document.createElement("td");
-        td3.innerHTML = ${data[i].price};
-        let td4 = document.createElement("td");
-        let qty = document.createElement("div");
-        let btn1 = document.createElement("button");
-        btn1.innerHTML = "-";
-        btn1.addEventListener("click", () => update(i, -1));
-        let btn2 = document.createElement("button");
-        btn2.innerHTML = "+";
-        btn2.addEventListener("click", () => update(i, 1));
-        let qtyDisplay = document.createElement("span");
-        qtyDisplay.innerHTML = data[i].qty;
-        qty.append(btn1, qtyDisplay, btn2);
-        td4.append(qty);
-        let td5 = document.createElement("td");
-        let total = data[i].price * data[i].qty;
-        td5.innerHTML = ${total};
-        let td6 = document.createElement("td");
-        let remove = document.createElement("button");
-        remove.className = "btn btn-warning btn-white";
-        remove.innerHTML = "Remove";
-        remove.addEventListener("click", () => removecart(i));
-        td6.append(remove);
-        tr.append(td1, td2, td3, td4, td5, td6);
-        tbody.append(tr);
+const remove = (index) => {
+    cart.splice(index, 1)
+    localStorage.setItem("cart", JSON.stringify(cart))
+    mapper(cart)
+}
+
+const handleQty = (opr, index) => {
+    if (opr == "+") {
+        cart[index].qty += 1
+        localStorage.setItem("cart", JSON.stringify(cart))
     }
-    let totalPrice = data.reduce((acc, list) => acc + list.price * list.qty, 0);
-};
+    else {
 
-const update = (index, change) => {
-    if (cart[index].qty + change > 0) {
-        cart[index].qty += change;
+        if (cart[index].qty > 1) {
+            cart[index].qty -= 1
+            localStorage.setItem("cart", JSON.stringify(cart))
+        }
+        else {
+            remove(index)
+        }
+
     }
-    localStorage.setItem("cart",JSON.stringify(cart));
-    mapper(cart);
-};
+    mapper(cart)
 
-const removecart = (index) => {
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    mapper(cart);
-};
+}
+const mapper = (cart) => {
 
-mapper(cart);
+    document.getElementById("cartItem").innerHTML = ""
+
+    cart.map((ele, i) => {
+
+        let tr = createTag("tr", "")
+        let td1 = createTag("td", "")
+        let img = createTag("img", ele.img)
+        img.setAttribute("class", "img")
+
+        td1.append(img)
+
+        let td2 = createTag("td", ele.title)
+        // qty
+        let td3 = createTag("td", "")
+        let btn1 = createTag("button", "-")
+        let btn2 = createTag("button", ele.qty)
+        let btn3 = createTag("button", "+")
+        td3.append(btn1, btn2, btn3)
+
+        btn1.addEventListener("click", () => handleQty("-", i));
+        btn3.addEventListener("click", () => handleQty("+", i));
+
+        let td4 = createTag("td", ele.price)
+        let td5 = createTag("td", ele.qty * ele.price)
+        let td6 = createTag("td", "remove")
+        td6.addEventListener("click", () => remove(i))
+
+        tr.append(td1, td2, td3, td4, td5, td6)
+
+        document.getElementById("cartItem").append(tr)
+
+    })
+
+
+}
+
+mapper(cart)

@@ -12,7 +12,5 @@ export const createTag = (tag, value) => {
     else {
         tagName.innerHTML = value;
     }
-
-
     return tagName;
 };
