@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 .bannerbg{
-    background-image: url('/images/bannerbg/02.avif');
+    background-image: url('/Project/images/bannerbg/02.avif');
     width: 100%;
     height: 100%;
     background-size: cover;
